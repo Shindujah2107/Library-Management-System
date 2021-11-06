@@ -1,0 +1,172 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jan 21, 2020 at 06:56 AM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `library3`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+DROP TABLE IF EXISTS `books`;
+CREATE TABLE IF NOT EXISTS `books` (
+  `bid` int(11) NOT NULL AUTO_INCREMENT,
+  `bookname` varchar(100) NOT NULL,
+  `isbn1` int(100) NOT NULL,
+  `author1` varchar(100) NOT NULL,
+  `edition1` varchar(100) NOT NULL,
+  `purchasedate1` varchar(100) NOT NULL,
+  `language1` varchar(100) NOT NULL,
+  `status1` varchar(100) NOT NULL,
+  `quantity1` int(100) NOT NULL,
+  `department1` varchar(100) NOT NULL,
+  PRIMARY KEY (`bid`),
+  UNIQUE KEY `isbn1` (`isbn1`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`bid`, `bookname`, `isbn1`, `author1`, `edition1`, `purchasedate1`, `language1`, `status1`, `quantity1`, `department1`) VALUES
+(1, 'Datastrure', 98665, 'sdfg', '3rd', '2017/09/04', 'English', 'Available', 3, 'Computer Science and Technology'),
+(2, 'Software Engineering', 64767, ' Ian Sommerville', '4th', '2007/09/08', 'English', 'Available', 2, 'Computer Science and Technology'),
+(3, 'Fundamentals of Software Engineering', 54657, ' Rajib Mall', '3rd', '2007/09/08', 'English', 'Available', 4, 'Computer Science and Technology'),
+(4, 'Data Communication and Networking', 57774, 'Behrouz A Forouzan', '1st', '2017/09/04', 'English', 'Available', 3, 'Computer Science and Technology'),
+(5, 'Computer Networks', 89067, 'Tanenbaum', '5th', '2008/07/02', 'English', 'Available', 4, 'Computer Science and Technology'),
+(6, 'Geological Methods in Mineral Exploration', 67775, ' Roger Marjoribanks', '3rd', '2008/07/03', 'English', 'Available', 4, 'Science and Technology'),
+(7, 'Mineral Deposits of the World', 56576, 'M Vanecek', '3rd', '2007/09/08', 'English', 'Available', 4, 'Science and Technology'),
+(8, 'Human Resource Management', 65665, 'Aswathappa K', '1st', '2001/09/08', 'sinhala', 'Available', 2, 'Export Agriculture'),
+(9, 'Fundamentals of Agribusiness Finance', 4563, 'Ralph W.Battles and Robert C Thompson', '4th', '2008/07/02', 'English', 'Unavailable', 4, 'Export Agriculture'),
+(10, 'Equilibrium Thermodynamics', 65567, 'J Adkins', '1st', '2007/09/08', 'English', 'Unavailable', 3, 'Engineering Technology'),
+(11, 'Oscillations And Waves', 87675, 'Satya Prakash and Vinay Dua', '1st', '2017/09/04', 'English', 'Available', 4, 'Engineering Technology'),
+(12, 'Microsystems for Bioelectronics', 76545, 'Victor V Zhirnov', '3rd', '2001/09/08', 'English', 'Available', 3, 'Bio-System Technology'),
+(13, 'C Programming Language', 87654, 'Thomas Koshy', '3rd', '2008/07/03', 'sinhala', 'Available', 4, 'Computer Science and Technology'),
+(14, 'Microsystem Technology', 87655, 'Thomas Koshy', '3rd', '2017/09/04', 'English', 'Available', 3, 'Computer Science and Technology'),
+(15, 'Algorithm Design', 747767, 'Thomas Koshy', '1st', '2001/09/08', 'English', 'Unavailable', 5, 'Engineering Technology'),
+(16, 'Mineral Deposits of the World', 77775, 'J Kleinberg', '3rd', '2008/07/02', 'English', 'Available', 2, 'Export Agriculture'),
+(17, 'Discrete Mathematics with Applications', 88885, 'Thomas Koshy', '2nd', '2008/07/02', 'English', 'Unavailable', 4, 'Computer Science and Technology');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `journal`
+--
+
+DROP TABLE IF EXISTS `journal`;
+CREATE TABLE IF NOT EXISTS `journal` (
+  `jid` int(11) NOT NULL AUTO_INCREMENT,
+  `journalname` varchar(100) NOT NULL,
+  `author2` varchar(100) NOT NULL,
+  `purchasedate2` varchar(100) NOT NULL,
+  `language2` varchar(100) NOT NULL,
+  `status2` varchar(100) NOT NULL,
+  `quantity2` varchar(100) NOT NULL,
+  PRIMARY KEY (`jid`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `journal`
+--
+
+INSERT INTO `journal` (`jid`, `journalname`, `author2`, `purchasedate2`, `language2`, `status2`, `quantity2`) VALUES
+(1, 'Civil Engineering', 'asdfgh', '2008/09/07', 'Sinhala', 'Available', '3'),
+(2, 'International Journal of Electrical and Computer Sciences', 'Robert Frost', '2018/08/21', 'English', 'Available', '3'),
+(3, 'Electronic Engineering Design', 'Findlay Media Limited (UK)', '2008/09/04', 'sinhala', 'Available', '3'),
+(4, 'Wireless, Mobile telephony', 'Hsiao-Hwa Chen', '2013/09/07', 'English', 'Available', '4'),
+(5, 'Environment, climate change, energy economics, energy policy', '	Yiu Fai Tsang', '2008/09/04', 'English', 'Available', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lostmaterial`
+--
+
+DROP TABLE IF EXISTS `lostmaterial`;
+CREATE TABLE IF NOT EXISTS `lostmaterial` (
+  `lid` varchar(255) NOT NULL,
+  `loname` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `author3` varchar(255) NOT NULL,
+  `language3` varchar(255) NOT NULL,
+  `purchasedate3` varchar(255) NOT NULL,
+  `lostdate3` varchar(255) NOT NULL,
+  `price3` double NOT NULL,
+  `year3` varchar(255) NOT NULL,
+  `monthissue3` varchar(255) NOT NULL,
+  `edition3` varchar(255) NOT NULL,
+  `isbn3` varchar(255) NOT NULL,
+  `department3` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lostmaterial`
+--
+
+INSERT INTO `lostmaterial` (`lid`, `loname`, `category`, `author3`, `language3`, `purchasedate3`, `lostdate3`, `price3`, `year3`, `monthissue3`, `edition3`, `isbn3`, `department3`) VALUES
+('J021', 'Embedded System Design', 'Journal', 'Geogary', 'Sinhala', '2003/09/08', '2019/05/09', 3000, '', '', '', '', ''),
+('B031', 'datastructure', 'Reference Book', 'amesh Gaonkar', 'English', '2008/07/06', '2019/07/08', 1000, '', '', '', '', ''),
+('M007', 'Fundamentals of Microcontrollers', 'Magazines', 'amesh Gaonkar', 'English', '2008/07/06', '2019/09/08', 2000, '2008', 'Aprial', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `magazine`
+--
+
+DROP TABLE IF EXISTS `magazine`;
+CREATE TABLE IF NOT EXISTS `magazine` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `magazinename` varchar(100) NOT NULL,
+  `monthissue` varchar(100) NOT NULL,
+  `year` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `quantity` int(100) NOT NULL,
+  `language` varchar(100) NOT NULL,
+  `author` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `magazine`
+--
+
+INSERT INTO `magazine` (`id`, `magazinename`, `monthissue`, `year`, `status`, `quantity`, `language`, `author`) VALUES
+(1, 'Sports Illustrated', 'April', '2007', 'Available', 2, 'English', 'Rena Torres Cacoullos'),
+(2, 'Game Informer', 'jan', '2010', 'Available', 4, 'English', 'D. Jackson'),
+(3, 'Family Circle', 'july', '2009', 'Available', 3, 'English', ' GeorgeGordon '),
+(4, 'Good Housekeeping', 'April', '2002', 'Available', 2, 'English', 'D. Jackson'),
+(5, 'Entertainment Weekly', 'December', '2010', 'Available', 5, 'English', ' George Gordon ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publisher1`
+--
+
+DROP TABLE IF EXISTS `publisher1`;
+CREATE TABLE IF NOT EXISTS `publisher1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pubname` varchar(100) NOT NULL,
+  `pubaddress` varchar(100) NOT NULL,
+  `pubcontact` varchar(100) NOT NULL,
+  `bookname` varchar(100) NOT NULL,
+  `publishingyear` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+COMMIT;

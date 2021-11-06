@@ -1,0 +1,44 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jun 15, 2020 at 05:36 AM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `library3`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publisher2`
+--
+
+DROP TABLE IF EXISTS `publisher2`;
+CREATE TABLE IF NOT EXISTS `publisher2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pubname` varchar(100) NOT NULL,
+  `pubaddress` varchar(100) NOT NULL,
+  `pubcontact` varchar(100) NOT NULL,
+  `publishingyear` varchar(100) NOT NULL,
+  `bookname1` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `publisher2`
+--
+
+INSERT INTO `publisher2` (`id`, `pubname`, `pubaddress`, `pubcontact`, `publishingyear`, `bookname1`) VALUES
+(2, 'Wiley', 'badulla', '0765500557', '2010', 'Data Structure'),
+(3, 'Arudchelvan', 'Jaffna', '0762200221', '2017', 'Engineering Technology'),
+(1, 'Wrox', 'Trincomalee', '0717784748', '2019', 'Aesthetic');
+COMMIT;
